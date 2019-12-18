@@ -38,7 +38,9 @@ client.on('message', msgObj => {
 
 });
 
-client.login(auth.token);
+//client.login(auth.token);
+client.login(process.env.BOT_TOKEN);
+
 
 // Random Sample ---------------------------------------------
 function randomSmae(){
