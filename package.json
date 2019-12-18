@@ -3,5 +3,10 @@
   "version":"1.0",
   "description":"部隊用機器人",
   "author":"X-man",
-  "dependencies":{}
+  "dependencies":{
+    "discord.js": "11.1.0",
+  }
+  "scripts": {
+    "start": "node bot.js"  
+  },
 }
