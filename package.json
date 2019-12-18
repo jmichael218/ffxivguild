@@ -5,6 +5,7 @@
   "author":"X-man",
   "dependencies":{
     "discord.js": "11.1.0",
+    "request": "2.81.0"
   },
   "scripts": {
     "start": "node bot.js"
