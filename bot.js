@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var debugMode = true
+var debugMode = false;
 
 client.on('ready', () => {
   console.log('system ready!');
