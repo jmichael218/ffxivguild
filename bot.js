@@ -26,6 +26,14 @@ client.on('message', msgObj => {
 				showAllMember(msgObj);
 			break;
 
+    case 'who':
+        showMemberInfo(msgObj, args, false);
+      break;
+
+    case 'more':
+        showMemberInfo(msgObj, args, true);
+      break;
+
     case 'r':
         var isOK = checkMembers(args);
 
@@ -59,6 +67,33 @@ if (debugMode) {
   client.login(auth.token);
 } else {
   client.login(process.env.BOT_TOKEN);
+}
+
+// Who: Show MemberInfos --------------------------------------
+function showMemberInfo(msgObj, name, isSHowClass) {
+  var mList = getLastUpdatedMembers();
+  var who = null;
+
+  mList.forEach(function(mb){
+    if (mb.MemberName == name) {
+      who = mb;
+    }
+  });
+
+  if (who == null) {
+
+    msgObj.channel.send(name + '-> 沒有這個人呢');
+    return;
+  }
+
+  var note = who.Note == '' ? '目前沒有自我介紹喔～' : who.Note;
+  msgObj.channel.send(name + "\t->\t" + note);
+
+  if (isSHowClass) {
+    who.Classes.forEach(function(cl){
+        msgObj.channel.send("職業:\t" + cl.Name);
+    });
+  }
 }
 
 // Random Members ---------------------------------------------
