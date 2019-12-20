@@ -4,7 +4,7 @@ var debugMode = true
 
 client.on('ready', () => {
   console.log('system ready!');
-	randomSample();
+	//randomSample();
 });
 
 // Create an event listener for messages
@@ -13,7 +13,6 @@ client.on('message', msgObj => {
 	var msg = msgObj.content;
 	if (msg.substring(0,1) != '!') {
 		return;
-		//msgObj.channel.send('get cmd');
 	}
 
 	var args = msg.substring(1).split(' ');
@@ -28,8 +27,9 @@ client.on('message', msgObj => {
 				showAllMember(msgObj);
 			break;
 
-		case 'add':
-			//addMember(args, msgObj);
+		case 'random':
+        var testData = ["水漾年華","沐非煙","阿爾庫塔斯","葉落散華","工口魔王","白井多惠","瀰","安筠"];
+        randomSample(msgObj, testData);
 			break;
 
 
@@ -37,9 +37,6 @@ client.on('message', msgObj => {
 	}
 
 });
-
-//client.login(auth.token);
-//client.login(process.env.BOT_TOKEN);
 
 if (debugMode) {
   var auth = require('./auth.json');
@@ -56,19 +53,16 @@ function showListType(list, type) {
   console.log('-----------------');
 }
 
-function randomSample(){
+function randomSample(msgObj, ){
 	//console.log('system ready!');
-	var members = getLastUpdatedMembers();
   console.log('random sample ==============')
+  var testData = ["水漾年華","沐非煙","阿爾庫塔斯","葉落散華","工口魔王","白井多惠","瀰","安筠"];
+  var members = getMemberByNames(testData);
 
 	//get tank list
 	var tList = getMembersByType('T', members);
 	var hList = getMembersByType('H', members);
   var dList = getMembersByType('D', members);
-
-  showListType(tList, 'T');
-  showListType(hList, 'H');
-  showListType(dList, 'D')
 
   var t1Pos = Math.floor(Math.random() * tList.length);
 	var t1 = tList[t1Pos];
@@ -88,7 +82,20 @@ function randomSample(){
     }
   });
 
-  var h1Pos = Math.floor(Math.random() * hList.length);
+  // 安筠 特殊狀況, 只有一補 若有出現, 直接塞入 h1
+  var h1Pos = -1;
+  var spName = "安筠"
+  hList.forEach(function(mb, index, array){
+    if (mb.MemberName == spName){
+      h1Pos = index;
+      console.log(' >>>>> get sp member with idx: ' + index);
+    }
+  });
+
+  if (h1Pos == -1) {
+    h1Pos = Math.floor(Math.random() * hList.length);
+  }
+
   var h1 = hList[h1Pos];
   hList.splice(h1Pos, 1);
   var h2 = hList[Math.floor(Math.random() * hList.length)];
@@ -99,36 +106,26 @@ function randomSample(){
       var dMember = dList[i];
 
       if (member.MemberName == dMember.MemberName) {
-
         dList.splice(i, 1);
       }
     }
   });
 
-	console.log('get two tank:');
-	console.log(t1.MemberName);
-	console.log(t2.MemberName);
-  console.log('---------------');
-	console.log('TankList:');
-	tList.forEach(function(mb){
-		console.log(mb.MemberName);
-	});
-  console.log('---------------');
-  console.log('get two healer:');
-  console.log(h1.MemberName);
-	console.log(h2.MemberName);
-	// console.log('HealerList:');
-	// hList.forEach(function(mb){
-	// 	console.log(mb.MemberName);
-	// });
-  console.log('---------------');
-	console.log('DamageList:');
+  var dispT1 = '坦: ' + t1.MemberName + '\n';
+  var dispT2 = '坦: ' + t2.MemberName + '\n';
+  var dispH1 = '補: ' + h1.MemberName + '\n';
+  var dispH2 = '補: ' + h2.MemberName + '\n';
+  var dps = '輸出: ' + '\n';
   dList.forEach(function(mb){
-		console.log(mb.MemberName);
+	   dps += mb.MemberName + '\n';
 	});
-  console.log('============================');
-}
 
+  var result = [dispT1, dispT2, dispH1, dispH2, dps];
+  result.forEach(function(msg){
+
+    msgObj.channel.send(msg);
+  });
+}
 
 // Random Sample ---------------------------------------------
 function randomSmae(){
@@ -145,17 +142,6 @@ function randomSmae(){
 	console.log('get two tank:');
 	console.log(t1.MemberName);
 	console.log(t2.MemberName);
-
-	// console.log('TankList:');
-	// tList.forEach(function(mb){
-	// 	console.log(mb.MemberName);
-	// });
-	//
-	//
-	// console.log('HealerList:');
-	// hList.forEach(function(mb){
-	// 	console.log(mb.MemberName);
-	// });
 }
 
 function getMembersByType(typeName, members) {
@@ -254,4 +240,21 @@ function getTypeByClosses(className) {
 }
 function getLastUpdatedMembers() {
 	return members = require('./members.json');
+}
+
+function getMemberByNames(nameList) {
+  var allMembers    = require('./members.json');
+  var targetMameber = []
+
+  nameList.forEach(function(name){
+    console.log(name);
+    allMembers.forEach(function(mb){
+      if (mb.MemberName == name) {
+        targetMameber.push(mb);
+        console.log('  --> push: ' + mb.MemberName);
+      }
+    });
+  });
+
+  return targetMameber;
 }
