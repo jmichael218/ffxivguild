@@ -178,7 +178,7 @@ function randomMembers(msgObj, memberNames){
   var dispT1 = '坦克:\t' + t1.MemberName + '\t' + getTypeByRandomClosses('T', t1.Classes) + '\n';
   var dispT2 = '坦克:\t' + t2.MemberName + '\t' + getTypeByRandomClosses('T', t2.Classes) + '\n';
   var dispH1 = '奶媽:\t' + h1.MemberName + '\t' + getTypeByRandomClosses('H', h1.Classes) + '\n';
-  var dispH2 = '奶媽:\t' + h2.MemberName + '\t' + getTypeByRandomClosses('H', h1.Classes) + '\n';
+  var dispH2 = '奶媽:\t' + h2.MemberName + '\t' + getTypeByRandomClosses('H', h2.Classes) + '\n';
   var dps = '';
 
   dList.forEach(function(mb){
