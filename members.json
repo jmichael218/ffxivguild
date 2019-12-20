@@ -1,60 +1,148 @@
 [{
-    "MemberName":"安筠",
-    "Classes":[
-        {"Type":"H","Name":"白魔法"}]
+  "MemberName":"水漾年華",
+  "Classes":[
+    {"Type":"D","Name":"召喚師"},
+    {"Type":"D","Name":"武士"},
+    {"Type":"D","Name":"忍者"},
+    {"Type":"D","Name":"赤魔法師"},
+    {"Type":"T","Name":"戰士"},
+    {"Type":"H","Name":"占星術師"}]
 	},
 	{
-    "MemberName":"阿爾庫塔斯",
+    "MemberName":"沐非煙",
     "Classes":[
-        {"Type":"H","Name":"白魔法"},
-        {"Type":"T","Name":"暗黑骑士"},
-        {"Type":"T","Name":"骑士"},
-        {"Type":"D","Name":"黑魔法"}]
+        {"Type":"D","Name":"龍騎士"},
+        {"Type":"D","Name":"吟遊詩人"},
+        {"Type":"D","Name":"黑魔法師"},
+        {"Type":"D","Name":"黑魔法"},
+        {"Type":"T","Name":"召喚師"},
+        {"Type":"T","Name":"黑暗騎士"},
+        {"Type":"H","Name":"騎士"},
+        {"Type":"H","Name":"學者"}]
   },
   {
-    "MemberName":"水漾年華",
+    "MemberName":"桑德楓",
     "Classes":[
-        {"Type":"H","Name":"占星术士"},
-        {"Type":"D","Name":"赤魔法师"},
-        {"Type":"T","Name":"绝枪战士"},
-        {"Type":"T","Name":"暗黑骑士"}]
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"D","Name":"舞者"},
+        {"Type":"T","Name":"黑暗騎士"},
+        {"Type":"H","Name":"學者"},
+        {"Type":"H","Name":"白魔法師"}]
   },
   {
-    "MemberName":"白井多惠",
+    "MemberName":"葉落散華",
     "Classes":[
-        {"Type":"H","Name":"占星术士"},
-        {"Type":"D","Name":"赤魔法师"},
-        {"Type":"T","Name":"绝枪战士"},
-        {"Type":"T","Name":"暗黑骑士"}]
-  },
-  {
-    "MemberName":"彌",
-    "Classes":[
-        {"Type":"T","Name":"绝枪战士"}]
-  },
-  {
-    "MemberName":"澤村遙",
-    "Classes":[
-        {"Type":"H","Name":"占星术士"},
-        {"Type":"D","Name":"赤魔法师"},
-        {"Type":"T","Name":"绝枪战士"},
-        {"Type":"T","Name":"暗黑骑士"}]
+        {"Type":"D","Name":"龍騎士"},
+        {"Type":"H","Name":"白魔法師"}]
   },
   {
     "MemberName":"工口魔王",
     "Classes":[
-        {"Type":"H","Name":"占星术士"},
-        {"Type":"D","Name":"赤魔法师"},
-        {"Type":"T","Name":"绝枪战士"},
-        {"Type":"T","Name":"暗黑骑士"}]
+        {"Type":"D","Name":"武士"},
+        {"Type":"D","Name":"舞者"},
+        {"Type":"D","Name":"赤魔法師"},
+        {"Type":"T","Name":"絕槍戰士"}]
   },
   {
-    "MemberName":"夏夜靜雨",
+    "MemberName":"白井多惠",
     "Classes":[
-        {"Type":"H","Name":"占星术士"},
-        {"Type":"D","Name":"赤魔法师"},
-        {"Type":"T","Name":"绝枪战士"},
-        {"Type":"T","Name":"暗黑骑士"}]
-  }
+        {"Type":"D","Name":"機工士"},
+        {"Type":"H","Name":"占星術師"}]
+  },
+  {
+    "MemberName":"瀰",
+    "Classes":[
+        {"Type":"D","Name":"龍騎士"},
+        {"Type":"D","Name":"赤魔法師"},
+        {"Type":"T","Name":"戰士"},
+        {"Type":"H","Name":"白魔法師"},
+        {"Type":"H","Name":"學者"}]
+  },
+  {
+    "MemberName":"偽語",
+    "Classes":[
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"T","Name":"騎士"},
+        {"Type":"T","Name":"戰士"},
+        {"Type":"T","Name":"黑暗騎士"},
+        {"Type":"T","Name":"絕槍戰士"},
+        {"Type":"T","Name":"學者"},
+        {"Type":"H","Name":"白魔法師"}]
+  },
+  {
+    "MemberName":"Morumi",
+    "Classes":[
+        {"Type":"D","Name":"舞者"},
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"D","Name":"赤魔法師"},
+        {"Type":"D","Name":"吟遊詩人"},
+        {"Type":"H","Name":"白魔法師"},
+        {"Type":"H","Name":"學者"},
+        {"Type":"H","Name":"占星術師"}]
+  },
+  {
+    "MemberName":"阿爾庫塔斯",
+    "Classes":[
+        {"Type":"D","Name":"吟遊詩人"},
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"D","Name":"黑魔法師"},
+        {"Type":"T","Name":"黑暗騎士"},
+        {"Type":"H","Name":"學者"}]
+  },
+  {
+    "MemberName":"冬瓜凝萌",
+    "Classes":[
+        {"Type":"T","Name":"黑暗騎士"},
+        {"Type":"H","Name":"白魔法師"}]
+  },
+  {
+    "MemberName":"Cassie",
+    "Classes":[
+        {"Type":"D","Name":"赤魔法師"},
+        {"Type":"D","Name":"龍騎士"},
+        {"Type":"D","Name":"吟遊詩人"}]
+  },
+  {
+    "MemberName":"老劍仙",
+    "Classes":[
+        {"Type":"D","Name":"武僧"},
+        {"Type":"D","Name":"黑魔法師"},
+        {"Type":"D","Name":"騎士"}]
+  },
 
+  {
+    "MemberName":"小小荷包蛋",
+    "Classes":[
+        {"Type":"D","Name":"武士"},
+        {"Type":"D","Name":"機工士"},
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"D","Name":"龍騎士"},
+        {"Type":"H","Name":"學者"}]
+  },
+  {
+    "MemberName":"靜夜微雨",
+    "Classes":[
+        {"Type":"D","Name":"機工士"},
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"H","Name":"白魔法師"},
+        {"Type":"H","Name":"學者"},
+        {"Type":"H","Name":"占星術師"}]
+  },
+
+  {
+    "MemberName":"青愛嘴嘴",
+    "Classes":[
+        {"Type":"D","Name":"吟遊詩人"},
+        {"Type":"D","Name":"召喚師"},
+        {"Type":"D","Name":"赤魔法師"},
+        {"Type":"D","Name":"很軟的打手"},
+        {"Type":"H","Name":"白魔法師"},
+        {"Type":"H","Name":"學者"},
+        {"Type":"H","Name":"占星術師"}]
+  },
+  {
+    "MemberName":"安筠",
+    "Classes":[
+        {"Type":"H","Name":"白魔法師"}]
+  }
 ]

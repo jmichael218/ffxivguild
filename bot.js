@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-//var auth = require('./auth.json');
+var debugMode = true
 
 client.on('ready', () => {
   console.log('system ready!');
-	//randomSmae();
+	randomSample();
 });
 
 // Create an event listener for messages
@@ -39,7 +39,95 @@ client.on('message', msgObj => {
 });
 
 //client.login(auth.token);
-client.login(process.env.BOT_TOKEN);
+//client.login(process.env.BOT_TOKEN);
+
+if (debugMode) {
+  var auth = require('./auth.json');
+  client.login(auth.token);
+} else {
+  client.login(process.env.BOT_TOKEN);
+}
+
+function showListType(list, type) {
+
+  list.forEach(function(mb){
+    console.log(mb.MemberName + ' - ' + type);
+  });
+  console.log('-----------------');
+}
+
+function randomSample(){
+	//console.log('system ready!');
+	var members = getLastUpdatedMembers();
+  console.log('random sample ==============')
+
+	//get tank list
+	var tList = getMembersByType('T', members);
+	var hList = getMembersByType('H', members);
+  var dList = getMembersByType('D', members);
+
+  showListType(tList, 'T');
+  showListType(hList, 'H');
+  showListType(dList, 'D')
+
+  var t1Pos = Math.floor(Math.random() * tList.length);
+	var t1 = tList[t1Pos];
+  tList.splice(t1Pos, 1);
+	var t2 = tList[Math.floor(Math.random() * tList.length)];
+  var tMbs = [t1,t2];
+
+  tMbs.forEach(function(tank){
+    for (var i = 0; i < hList.length; i++) {
+      var hMember = hList[i];
+      //console.log(' compare :'+tank.MemberName+', ' + hMember.MemberName);
+      if (tank.MemberName == hMember.MemberName) {
+
+        console.log(' - remove : ' + hMember.MemberName);
+        hList.splice(i, 1);
+      }
+    }
+  });
+
+  var h1Pos = Math.floor(Math.random() * hList.length);
+  var h1 = hList[h1Pos];
+  hList.splice(h1Pos, 1);
+  var h2 = hList[Math.floor(Math.random() * hList.length)];
+  var mbs = [h1, h2, t1, t2];
+
+  mbs.forEach(function(member){
+    for (var i = 0; i < dList.length; i++) {
+      var dMember = dList[i];
+
+      if (member.MemberName == dMember.MemberName) {
+
+        dList.splice(i, 1);
+      }
+    }
+  });
+
+	console.log('get two tank:');
+	console.log(t1.MemberName);
+	console.log(t2.MemberName);
+  console.log('---------------');
+	console.log('TankList:');
+	tList.forEach(function(mb){
+		console.log(mb.MemberName);
+	});
+  console.log('---------------');
+  console.log('get two healer:');
+  console.log(h1.MemberName);
+	console.log(h2.MemberName);
+	// console.log('HealerList:');
+	// hList.forEach(function(mb){
+	// 	console.log(mb.MemberName);
+	// });
+  console.log('---------------');
+	console.log('DamageList:');
+  dList.forEach(function(mb){
+		console.log(mb.MemberName);
+	});
+  console.log('============================');
+}
 
 
 // Random Sample ---------------------------------------------
