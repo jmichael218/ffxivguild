@@ -1,5 +1,6 @@
 [{
   "MemberName":"水漾年華",
+  "Note":"毫無回應，就只是個老大",
   "Classes":[
     {"Type":"D","Name":"召喚師"},
     {"Type":"D","Name":"武士"},
@@ -10,6 +11,7 @@
 	},
 	{
     "MemberName":"沐非煙",
+    "Note":"老菸",
     "Classes":[
         {"Type":"D","Name":"龍騎士"},
         {"Type":"D","Name":"吟遊詩人"},
@@ -22,6 +24,7 @@
   },
   {
     "MemberName":"桑德楓",
+    "Note":"爆炸頭的桑",
     "Classes":[
         {"Type":"D","Name":"召喚師"},
         {"Type":"D","Name":"舞者"},
@@ -31,12 +34,14 @@
   },
   {
     "MemberName":"葉落散華",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"龍騎士"},
         {"Type":"H","Name":"白魔法師"}]
   },
   {
     "MemberName":"工口魔王",
+    "Note":"這不是新阿姆斯特朗旋風噴射阿姆斯特朗砲嗎？做得挺像的呢",
     "Classes":[
         {"Type":"D","Name":"武士"},
         {"Type":"D","Name":"舞者"},
@@ -45,12 +50,14 @@
   },
   {
     "MemberName":"白井多惠",
+    "Note":"人類觀察家",
     "Classes":[
         {"Type":"D","Name":"機工士"},
         {"Type":"H","Name":"占星術師"}]
   },
   {
     "MemberName":"瀰",
+    "Note":"錢包神偷",
     "Classes":[
         {"Type":"D","Name":"龍騎士"},
         {"Type":"D","Name":"赤魔法師"},
@@ -60,6 +67,7 @@
   },
   {
     "MemberName":"偽語",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"召喚師"},
         {"Type":"T","Name":"騎士"},
@@ -71,6 +79,7 @@
   },
   {
     "MemberName":"Morumi",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"舞者"},
         {"Type":"D","Name":"召喚師"},
@@ -82,6 +91,7 @@
   },
   {
     "MemberName":"阿爾庫塔斯",
+    "Note":"阿爾庫塔就是阿爾庫塔, 既不偉大也不卑微",
     "Classes":[
         {"Type":"D","Name":"吟遊詩人"},
         {"Type":"D","Name":"召喚師"},
@@ -91,12 +101,14 @@
   },
   {
     "MemberName":"冬瓜凝萌",
+    "Note":"",
     "Classes":[
         {"Type":"T","Name":"黑暗騎士"},
         {"Type":"H","Name":"白魔法師"}]
   },
   {
     "MemberName":"Cassie",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"赤魔法師"},
         {"Type":"D","Name":"龍騎士"},
@@ -104,6 +116,7 @@
   },
   {
     "MemberName":"老劍仙",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"武僧"},
         {"Type":"D","Name":"黑魔法師"},
@@ -112,6 +125,7 @@
 
   {
     "MemberName":"小小荷包蛋",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"武士"},
         {"Type":"D","Name":"機工士"},
@@ -121,6 +135,7 @@
   },
   {
     "MemberName":"靜夜微雨",
+    "Note":"",
     "Classes":[
         {"Type":"D","Name":"機工士"},
         {"Type":"D","Name":"召喚師"},
@@ -131,6 +146,7 @@
 
   {
     "MemberName":"青愛嘴嘴",
+    "Note":"@Q@",
     "Classes":[
         {"Type":"D","Name":"吟遊詩人"},
         {"Type":"D","Name":"召喚師"},
@@ -142,6 +158,7 @@
   },
   {
     "MemberName":"安筠",
+    "Note":"天靈蓋殺手？",
     "Classes":[
         {"Type":"H","Name":"白魔法師"}]
   }

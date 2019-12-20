@@ -27,16 +27,25 @@ client.on('message', msgObj => {
 			break;
 
     case 'r':
-        randomSample(msgObj, args);
+        var isOK = checkMembers(args);
+
+        if (!isOK) {
+          var msg = '輸入的人數或人名有誤, 請檢查輸入的人名不重複且已存在於清單中.\n可透過輸入 !show 來顯示目前清單中所有人名喔.'
+          msgObj.channel.send(msg);
+          break;
+        }
+
+        randomMembers(msgObj, args);
       break;
 
 		case 'rt':
+
         var testData = ["水漾年華","沐非煙","阿爾庫塔斯","葉落散華","工口魔王","白井多惠","瀰","安筠"];
         msgObj.channel.send('---------------------------------------------------------------------------------');
         msgObj.channel.send('使用測試資料進行 隨機職業挑選, 測試資料如下: ');
         msgObj.channel.send('水漾年華 沐非煙 阿爾庫塔斯 葉落散華 工口魔王 白井多惠 瀰 安筠');
         msgObj.channel.send('---------------------------------------------------------------------------------');
-        randomSample(msgObj, testData);
+        randomMembers(msgObj, testData);
         msgObj.channel.send('---------------------------------------------------------------------------------');
 			break;
 
@@ -52,17 +61,32 @@ if (debugMode) {
   client.login(process.env.BOT_TOKEN);
 }
 
-function showListType(list, type) {
+// Random Members ---------------------------------------------
+function checkMembers(memberNames) {
+  const correct = 8;
+  var result = Array.from(new Set(memberNames));
 
-  list.forEach(function(mb){
-    console.log(mb.MemberName + ' - ' + type);
+  if (memberNames.length != correct || result.length != correct) {
+    return false;
+  }
+
+  var count = 0;
+  var mList = getLastUpdatedMembers();
+  memberNames.forEach(function(name){
+
+    mList.forEach(function(mb){
+
+      if (name == mb.MemberName){
+        count ++;
+      }
+    });
   });
-  console.log('-----------------');
+
+  return count == correct ? true : false
 }
 
-function randomSample(msgObj, memberNames){
-	//console.log('system ready!');
-  console.log('random sample ==============')
+function randomMembers(msgObj, memberNames){
+
   var members = getMemberByNames(memberNames);
 
 	//get tank list
@@ -133,7 +157,6 @@ function randomSample(msgObj, memberNames){
   });
 }
 
-// Random Sample ---------------------------------------------
 function getMembersByType(typeName, members) {
 
 	var mList = [];
@@ -183,10 +206,6 @@ function addMember(args, msgObj) {
 	}
 
 	var members = getLastUpdatedMembers()
-
-}
-
-function removeMember(Name) {
 
 }
 
