@@ -4,7 +4,6 @@ var debugMode = true
 
 client.on('ready', () => {
   console.log('system ready!');
-	//randomSample();
 });
 
 // Create an event listener for messages
@@ -27,9 +26,18 @@ client.on('message', msgObj => {
 				showAllMember(msgObj);
 			break;
 
+    case 'r':
+        randomSample(msgObj, args);
+      break;
+
 		case 'rt':
         var testData = ["水漾年華","沐非煙","阿爾庫塔斯","葉落散華","工口魔王","白井多惠","瀰","安筠"];
+        msgObj.channel.send('---------------------------------------------------------------------------------');
+        msgObj.channel.send('使用測試資料進行 隨機職業挑選, 測試資料如下: ');
+        msgObj.channel.send('水漾年華 沐非煙 阿爾庫塔斯 葉落散華 工口魔王 白井多惠 瀰 安筠');
+        msgObj.channel.send('---------------------------------------------------------------------------------');
         randomSample(msgObj, testData);
+        msgObj.channel.send('---------------------------------------------------------------------------------');
 			break;
 
 		default:
@@ -52,11 +60,10 @@ function showListType(list, type) {
   console.log('-----------------');
 }
 
-function randomSample(msgObj, ){
+function randomSample(msgObj, memberNames){
 	//console.log('system ready!');
   console.log('random sample ==============')
-  var testData = ["水漾年華","沐非煙","阿爾庫塔斯","葉落散華","工口魔王","白井多惠","瀰","安筠"];
-  var members = getMemberByNames(testData);
+  var members = getMemberByNames(memberNames);
 
 	//get tank list
 	var tList = getMembersByType('T', members);
@@ -87,7 +94,6 @@ function randomSample(msgObj, ){
   hList.forEach(function(mb, index, array){
     if (mb.MemberName == spName){
       h1Pos = index;
-      console.log(' >>>>> get sp member with idx: ' + index);
     }
   });
 
@@ -110,11 +116,12 @@ function randomSample(msgObj, ){
     }
   });
 
-  var dispT1 = '坦克:\t' + t1.MemberName +'\t' + getTypeByRandomClosses('T', t1.Classes) + '\n';
+  var dispT1 = '坦克:\t' + t1.MemberName + '\t' + getTypeByRandomClosses('T', t1.Classes) + '\n';
   var dispT2 = '坦克:\t' + t2.MemberName + '\t' + getTypeByRandomClosses('T', t2.Classes) + '\n';
   var dispH1 = '奶媽:\t' + h1.MemberName + '\t' + getTypeByRandomClosses('H', h1.Classes) + '\n';
   var dispH2 = '奶媽:\t' + h2.MemberName + '\t' + getTypeByRandomClosses('H', h1.Classes) + '\n';
   var dps = '';
+
   dList.forEach(function(mb){
 	   dps += '輸出\t: ' + mb.MemberName + '\t' + getTypeByRandomClosses('D', mb.Classes) + '\n';
 	});
