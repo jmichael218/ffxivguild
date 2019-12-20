@@ -90,9 +90,13 @@ function showMemberInfo(msgObj, name, isSHowClass) {
   msgObj.channel.send(name + "\t->\t" + note);
 
   if (isSHowClass) {
+    var output = ''
     who.Classes.forEach(function(cl){
-        msgObj.channel.send("職業:\t" + cl.Name);
+      output += '"職業:\t" + cl.Name';
+        //msgObj.channel.send("職業:\t" + cl.Name);
     });
+
+    msgObj.channel.send(output);
   }
 }
 
