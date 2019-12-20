@@ -92,7 +92,7 @@ function showMemberInfo(msgObj, name, isSHowClass) {
   if (isSHowClass) {
     var output = ''
     who.Classes.forEach(function(cl){
-      output += "職業:\t" + cl.Name;
+      output += "職業:\t" + cl.Name + '\n';
         //msgObj.channel.send("職業:\t" + cl.Name);
     });
 
