@@ -117,17 +117,17 @@ function showMemberInfo(msgObj, name, isSHowClass) {
 
   if (who == null) {
 
-    msgObj.channel.send(name + '-> 沒有這個人呢');
+    msgObj.channel.send(name + ':\t目前資料庫中沒有這個人呢');
     return;
   }
 
-  var note = who.Note == '' ? '目前沒有自我介紹喔～' : who.Note;
-  msgObj.channel.send(name + "\t->\t" + note);
+  var note = who.Note == '' ? '目前還沒有自我介紹喔～' : who.Note;
+  msgObj.channel.send(name + "\t:\t" + note);
 
   if (isSHowClass) {
-    var output = ''
+    var output = '職業:\n';
     who.Classes.forEach(function(cl){
-      output += "職業:\t" + cl.Name + '\n';
+      output += "\t" + cl.Name + '\n';
         //msgObj.channel.send("職業:\t" + cl.Name);
     });
 
