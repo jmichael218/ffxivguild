@@ -34,6 +34,10 @@ client.on('message', msgObj => {
         showMemberInfo(msgObj, args, true);
       break;
 
+    case 'help':
+        showHelp(msgObj);
+      break;
+
     case 'r':
         var isOK = checkMembers(args);
 
@@ -67,6 +71,37 @@ if (debugMode) {
   client.login(auth.token);
 } else {
   client.login(process.env.BOT_TOKEN);
+}
+
+// Help: Show Help Msg ----------------------------------------
+function showHelp(msgObj){
+  var msg0  = '使用說明, 基本上就是 驚嘆號+指令+參數, 指令參數都是用空白鍵隔開\n';
+  var msg1 = '目前為 1.0 版, 應該會遇到一些 bug 如果有發現任何 bug 可以再跟 安筠 說\n'
+  var msg2 = '後續會陸陸續續加些有趣的功能, 如果有想到任何有趣的功能都可以提出來看看!\n'
+  var msg17 = '------------------------------------------------------------------\n'
+  var msg3 = '以下是指令使用說明:\n'
+  var msg4 = '!show\n'
+  var msg5 = '\t顯示當前資料庫所有人名跟職業, 最好不要常用, 避免洗版\n'
+  var msg6 = '!who\t人名\n'
+  var msg7 = '\t顯示個人簡介\n'
+  var msg8 = '!more\t人名\n'
+  var msg9 = '\t顯示個人簡介,加上目前有練的職業\n'
+  var msg10 = '!r\t人名1\t人名2\t人名3\t人名4\t人名5\t人名6\t人名7\t人名8\n'
+  var msg11 = '\t隨機選出2坦2奶4DD, 注意人名不可重複, 且一定要八人\n'
+  var msg12 = '------------------------------------------------------------------\n'
+  var msg13 = '未來可能會做出來的功能\n'
+  var msg14 = '1. 直接下指令進行新增人員或職業\n'
+  var msg15 = '2. \"解限\" 隨機選職業功能\n'
+  var msg16 = '3. 串接一些查詢網頁 Ex wiki 之類的\n'
+
+  var arr = [msg0,msg1,msg2,msg17,msg3,msg4,msg5,msg6,msg7,msg8,msg9,msg10,msg11,msg12,msg13,msg14,,msg15,msg16];
+  var help = '';
+
+  arr.forEach(function(h){
+      help += h;
+  });
+
+  msgObj.channel.send(help);
 }
 
 // Who: Show MemberInfos --------------------------------------
