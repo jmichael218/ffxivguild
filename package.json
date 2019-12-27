@@ -1,13 +1,14 @@
 {
-  "name":"F_Bot",
-  "version":"1.0.0",
-  "description":"部隊用機器人",
-  "author":"X-man",
+  "name": "F_Bot",
+  "version": "1.0.0",
+  "description": "部隊用機器人",
+  "author": "X-man",
   "scripts": {
     "start": "node bot.js"
   },
-  "dependencies":{
+  "dependencies": {
     "discord.js": "11.1.0",
+    "firebase": "^7.6.1",
     "request": "2.81.0"
   }
 }

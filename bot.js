@@ -1,7 +1,19 @@
+var debugMode = true;
+
+const dbModule = require('./fbs_db.js');
+
+// Discord bot
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var debugMode = false;
 
+console.log('------ show db content');
+dbModule.showDB(function(eVal){
+  console.log('###########');
+  console.log(eVal);
+  console.log('###########');
+});
+
+// run discord bot
 client.on('ready', () => {
   console.log('system ready!');
 });
